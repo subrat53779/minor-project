@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+        <link rel = "stylesheet" href = "style/material.indigo-pink.min.css">
+         
+        <script src = "js/material.js"> </script>
+
+         <link rel = "stylesheet" href = "style/icon.css">
+
+        
+        <title>Morse Code Convertor</title>
+    </head>
+    <body>
+        <!-- Simple header with scrollable tabs. -->
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+               <header class="mdl-layout__header">
+                  <div class="mdl-layout__header-row">
+                     <!-- Title -->
+                     <span class="mdl-layout-title">Morse Code Convertor</span>
+                  </div>
+                  <!-- Tabs -->
+                  <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                     <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Convertor</a>
+                     <a href="#scroll-tab-2" class="mdl-layout__tab">Settings</a>
+                  </div>
+               </header>
+               <div class="mdl-layout__drawer">
+                  <span class="mdl-layout-title">Contacts</span>
+		<p>Subrat Kumar Sahoo<br>Pritish Kumar Biswal<br>Sidhant Rath<br>emails:subratk94@gmail.com<br>	pritishbiswal78@gmail.com<br>sidhantrath426@gmail.com</p>
+               </div>
+               <main class="mdl-layout__content">
+                  
+                  <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+                     <!-- translate  -->
+                     <div class="page-content" style="padding:30px 0px 0px 50px">
+                      
+                        <p style="padding:0;margin:0">Dont use symbols: !@#$%^&*()_+{} tab, and so on...</p>
+			<br>
+                        <p>Input text here!</p>
+                        <!-- Floating Multiline Textfield -->
+                        <div class="mdl-textfield mdl-js-textfield">
+                           <textarea id="input" class="mdl-textfield__input" type="text" rows= "3" id="sample5"  style="border: 2px 0px 2px 0px solid rgba(0,0,0,.12);height:100px"></textarea>
+                           <label class="mdl-textfield__label" for="sample5">Don't know what to type? Try SOS</label>
+                        </div>
+                        <div style="margin:20px 0px 40px 0px">
+                           <button id="submit" onclick="morse()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Convert</button>
+                           <button id="submit" onclick="play()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Play</button>
+                          <button id="stopPlaying" onclick="stopPlaying()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Stop</button>
+                        </div>
+                        <p>Morse code </p>
+                        <!-- Floating Multiline Textfield -->
+                        <div class="mdl-textfield mdl-js-textfield">
+                           <textarea id="output" class="mdl-textfield__input" type="text" rows= "3" style="height:200px; font-size:40px"></textarea>
+                           <label class="mdl-textfield__label" for="sample5" id="output1lable">output...</label>
+                        </div>
+                      
+                     </div>
+
+                  </section>
+                  <section  style="padding:20px 0px 0px 50px" class="mdl-layout__tab-panel" id="scroll-tab-2">
+                     <!-- settings -->
+                     <div class="page-content">
+                        <h4 style="border-bottom: 1px solid rgba(0,0,0,.12); padding:0px 0px 20px 0px">Audio</h4>
+                        <p>Dot Length</p>
+                        <p style="width:300px">
+                           <input id="dotSlide" class="mdl-slider mdl-js-slider" type="range" min="1" max="1000" value="300" step="1">
+                        </p>
+                        <p>Dash Length</p>
+                        <p style="width:300px">
+                           <input id="dashSlide" class="mdl-slider mdl-js-slider" type="range" min="1" max="1000" value="500" step="1">
+                        </p>
+                        <p>Character Spacing Length</p>
+                        <p style="width:300px">
+                           <input id="charSpaceSlide" class="mdl-slider mdl-js-slider" type="range" min="1" max="300" value="70" step="1">
+                        </p>
+                        <p>Space Length</p>
+                        <p style="width:300px">
+                           <input id="spaceSlide" class="mdl-slider mdl-js-slider" type="range" min="1" max="300" value="200" step="1">
+                        </p>
+                        <p>Frequency</p>
+                        <p style="width:300px">
+                           <input id="frequencySlide" class="mdl-slider mdl-js-slider" type="range" min="200" max="3000" value="800" step="1">
+                        </p>
+                        <div style="margin:40px 0px 40px 0px">
+                           <button id="submit" onclick="setDefaults()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Default</button>
+                        </div>
+                     </div>
+                  </section>
+               </main>
+            </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/morse.js"></script>
+    </body>
+</html>
